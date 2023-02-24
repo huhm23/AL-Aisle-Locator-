@@ -6,5 +6,5 @@ setup(name='bluetooth',
       author='Haelyne Uhm',
       author_email='hu300@nyu.edu',
       url='https://github.com/huhm23/setup',
-      py_modules=['bluetoothconnection'],
+      py_modules=['bluetooth'],
      )
