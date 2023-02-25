@@ -1,3 +1,3 @@
 from at09 import bluetooth
 
-scan_for_devices()
+at09.scan_for_devices()
