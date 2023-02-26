@@ -1,10 +1,11 @@
 from at09 import bluetooth
 
 def scan_for_devices():
+        while True:
         try:
                 ble_list = Scanner().scan(10.0)
                 for dev in ble_list:
-                        return ("rssi: {} ; mac: {}".format(dev.rssi,dev.addr))
+                 print("rssi: {} ; mac: {}".format(dev.rssi,dev.addr))
         except:
                 raise Exception("Error occured")
 
