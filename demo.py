@@ -9,6 +9,6 @@ def scan_for_devices():
                                 print("rssi: {} ; mac: {}".format(dev.rssi,dev.addr))
                 except:
                         raise Exception("Error occured")
-scen_for_devices()
+scan_for_devices()
                 
 
