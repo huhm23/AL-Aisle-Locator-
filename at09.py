@@ -1,4 +1,4 @@
-from bluepy.btle import Scanner, DefaultDelegate
+from bluepy.btle import DefaultDelegate
 
 class bluetooth(DefaultDelegate): 
     def _init_(self):
