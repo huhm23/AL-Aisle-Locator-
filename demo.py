@@ -9,4 +9,4 @@ def scan_for_devices():
                 raise Exception("Error occured")
 
                 
-scan_for_devices()
+
