@@ -6,4 +6,4 @@ while True:
                 for dev in ble_list:
                         MR_list = []
                         MR_list.append("mac: {} ; rssi: {}".format(dev.addr, dev.rssi))
-                print(MR_list)
+                        print(MR_list)
