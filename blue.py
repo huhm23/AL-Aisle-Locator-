@@ -2,7 +2,8 @@ from bluepy.btle import Scanner
 
 while True:
         try:
-                ble_list = Scanner().scan(10.0)
+                ble_list = Scanner().scan(5.0)
+                MR_list = []
                 for dev in ble_list:
-                        print(dev)
-                #print(ble_list)
+                        MR_list.append("mac: {} ; rssi: {}".format(dev.addr, dev.rssi))
+print(MR_list)
