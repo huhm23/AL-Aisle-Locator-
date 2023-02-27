@@ -9,7 +9,7 @@ while True:
                                 MR_list.append("mac: {} ; rssi: {}".format(dev.addr, dev.rssi))
                         elif dev.addr == "d0:b5:c2:96:6b:f3":
                                 MR_list.append("mac: {} ; rssi: {}".format(dev.addr, dev.rssi))
-                        print(MR_list)
+                print(MR_list)
         except:
                 raise Exception("Error occured")
                 
