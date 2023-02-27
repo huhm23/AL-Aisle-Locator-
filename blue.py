@@ -1,8 +1,7 @@
 from bluepy.btle import Scanner
 
-ble_list = Scanner().scan(10.0, passive = False)
 while True:
-        #ble_list = Scanner().scan(10.0, passive = False)
+        ble_list = Scanner().scan(10.0, stop)
         try:
                 MR_list = []
                 for dev in ble_list:
