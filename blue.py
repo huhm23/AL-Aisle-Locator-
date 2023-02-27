@@ -12,5 +12,5 @@ while True:
                 
         except:
                 raise Exception("Error occured")
-                
-print(MR_list)
+        print(MR_list)        
+
