@@ -1,7 +1,7 @@
 from bluepy.btle import Scanner
 
 while True:
-        ble_list = Scanner().scan(10.0, stop)
+        ble_list = Scanner().scan(10.0, passive = False)
         try:
                 MR_list = []
                 for dev in ble_list:
@@ -13,4 +13,4 @@ while True:
         except:
                 raise Exception("Error occured")
                 
-#print(MR_list)
+print(MR_list)
