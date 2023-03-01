@@ -14,7 +14,7 @@ except:
   raise Exception("Error occured")
   
 for dev in my_list:
-  if my_list[0].rssi > my_list[1].rssi
+  if my_list[0].rssi > my_list[1].rssi:
     print(f"mac: {my_list[1].addr} ; rssi: {my_list[1].rssi}")
   else:
     print(f"mac: {my_list[0].addr} ; rssi: {my_list[0].rssi}")
