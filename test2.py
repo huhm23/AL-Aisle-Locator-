@@ -1,4 +1,4 @@
-from bluepy import btle
+from bluepy.btle import Scanner
 
 try:
   ble_list = Scanner().scan(10.0)
