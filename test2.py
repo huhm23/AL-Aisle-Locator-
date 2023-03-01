@@ -12,10 +12,17 @@ try:
                                 #pass 
 except:
   raise Exception("Error occured")
+
+max_num = -10000
+max_index = -1
   
-for dev in my_list:
-  if my_list[0].rssi > my_list[1].rssi:
-    print(f"mac: {my_list[1].addr} ; rssi: {my_list[1].rssi}")
-  else:
-    print(f"mac: {my_list[0].addr} ; rssi: {my_list[0].rssi}")
-  
+for i in range(len(my_list)):
+  #if my_list[0].rssi > my_list[1].rssi:
+   # print(f"mac: {my_list[1].addr} ; rssi: {my_list[1].rssi}")
+  #else:
+   # print(f"mac: {my_list[0].addr} ; rssi: {my_list[0].rssi}")
+  if my_list[i].rssi > max_num:
+    max_num = my_list[i].rssi
+    max_index = i 
+
+print(f"mac: {my_list[max_index].addr} ; rssi: {my_list[max_index].rssi}")
