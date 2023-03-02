@@ -7,6 +7,7 @@ from bluepy.btle import Scanner
 #B5: b4:99:4c:79:cc:a1
 
 # create list for my bluetooth devices
+# the "none" is for when there are not any bluetooth devices near
 my_list = ["none"]
 # create list for devices that are scanned
 ble_list = Scanner().scan(10.0)
