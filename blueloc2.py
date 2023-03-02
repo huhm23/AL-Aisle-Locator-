@@ -40,8 +40,10 @@ elif my_list[max_index].addr == "78:a5:04:90:82:69":
   print("You are near bluetooth 3")
 elif my_list[max_index].addr == "ec:11:27:54:4b:42":
   print("You are near bluetooth 4")
-else:
+elif my_list[max_index].addr == "b4:99:4c:79:cc:a1":
   print("You are near bluetooth 5")
+else:
+  print("You are not near any devices")
     
 
 
