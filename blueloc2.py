@@ -27,7 +27,9 @@ max_index = -1
 
 # check which index has the lowest RSSI number:
 for i in range(len(my_list)):
-  if my_list[i].rssi >= max_num: 
+  if my_list[i] == "none"
+    pass
+  elif my_list[i].rssi >= max_num: 
     max_num = my_list[i].rssi
     max_index = i
 
