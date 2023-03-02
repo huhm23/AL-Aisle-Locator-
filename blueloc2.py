@@ -31,11 +31,11 @@ if my_list[max_index].addr == "90:e2:02:b1:96:c3":
 elif my_list[max_index].addr == "d0:b5:c2:96:6b:f3":
   print("You are near bluetooth 2")
 elif my_list[max_index].addr == "78:a5:04:90:82:69":
-  print("You are near bluetooth 2")
-elif my_list[max_index].addr == "ec:11:27:54:4b:42":
-  print("You are near bluetooth 2")
-else:
   print("You are near bluetooth 3")
+elif my_list[max_index].addr == "ec:11:27:54:4b:42":
+  print("You are near bluetooth 4")
+else:
+  print("You are near bluetooth 5")
     
 
 print(f"mac: {my_list[max_index].addr} ; rssi: {my_list[max_index].rssi}")
