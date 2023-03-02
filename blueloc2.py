@@ -7,15 +7,16 @@ from bluepy.btle import Scanner
 #B5: b4:99:4c:79:cc:a1
 
 my_list = []
+ble_list = Scanner().scan(10.0)
 try:
-  ble_list = Scanner().scan(10.0)
   for dev in ble_list:
     if dev.addr == "90:e2:02:b1:96:c3" or dev.addr == "d0:b5:c2:96:6b:f3" or dev.addr == "78:a5:04:90:82:69" \
     or dev.addr == "ec:11:27:54:4b:42" or dev.addr == "b4:99:4c:79:cc:a1":
       my_list.append(dev)
 except:
   raise Exception("Error occured")
-
+for dev in my_list:
+  print(f"mac: {my_list[dev].addr} ; rssi: {my_list[dev].rssi}")
 
 max_num = -10000
 max_index = -1
