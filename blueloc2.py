@@ -34,6 +34,8 @@ for i in range(len(my_list)):
     max_index = i
 
 # compare the address to the bluetooth addresses and print the statement of the one you are near
+if my_list[max_index] == "none":
+  print("You are not near any devices")
 if my_list[max_index].addr == "90:e2:02:b1:96:c3":
   print("You are near bluetooth 1")
 elif my_list[max_index].addr == "d0:b5:c2:96:6b:f3":
@@ -42,10 +44,8 @@ elif my_list[max_index].addr == "78:a5:04:90:82:69":
   print("You are near bluetooth 3")
 elif my_list[max_index].addr == "ec:11:27:54:4b:42":
   print("You are near bluetooth 4")
-elif my_list[max_index].addr == "b4:99:4c:79:cc:a1":
-  print("You are near bluetooth 5")
 else:
-  print("You are not near any devices")
+  print("You are near bluetooth 5")
     
 
 
