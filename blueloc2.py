@@ -15,8 +15,7 @@ try:
       my_list.append(dev)
 except:
   raise Exception("Error occured")
-for dev in my_list:
-  print(f"mac: {dev.addr} ; rssi: {dev.rssi}")
+
 
 max_num = -10000
 max_index = -1
@@ -38,4 +37,4 @@ else:
   print("You are near bluetooth 5")
     
 
-print(f"mac: {my_list[max_index].addr} ; rssi: {my_list[max_index].rssi}")
+
