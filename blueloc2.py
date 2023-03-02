@@ -16,7 +16,7 @@ try:
 except:
   raise Exception("Error occured")
 for dev in my_list:
-  print(f"mac: {my_list[dev].addr} ; rssi: {my_list[dev].rssi}")
+  print(f"mac: {dev.addr} ; rssi: {dev.rssi}")
 
 max_num = -10000
 max_index = -1
