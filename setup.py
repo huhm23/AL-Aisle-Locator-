@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='bluetooth',
+setup(name='aislelocator',
       version='1.0',
       description='CompE Stub Library',
       author='Haelyne Uhm',
