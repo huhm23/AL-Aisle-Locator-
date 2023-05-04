@@ -6,5 +6,5 @@ setup(name='aislelocator',
       author='Haelyne Uhm',
       author_email='hu300@nyu.edu',
       url='https://github.com/huhm23/setup',
-      py_modules=['bluetooth'],
+      py_modules=['aislelocator'],
      )
