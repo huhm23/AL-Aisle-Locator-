@@ -1,4 +1,4 @@
-rom mfrc522 import SimpleMFRC522
+from mfrc522 import SimpleMFRC522
 import digitalio
 import board
 from adafruit_rgb_display import hx8357
