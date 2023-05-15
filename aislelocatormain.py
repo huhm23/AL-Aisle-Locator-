@@ -16,7 +16,7 @@ dict_of_mem = {792484197301 : "Haelyne", 433775815228 : "Dana", 18421623527 : "S
 dict_of_places = {"A1": "milk", "A2": "eggs", "A3": "chips",\
  "A4": "banana", "A5": "canned foods", "You are not near any devices" : ""}
 
-dict_of_shopping_list = {"name" : "Haelyne", "shopping list" : ["eggs", "banana"]}
+dict_of_shopping_list = {"name" : "Professor Fund", "shopping list" : ["eggs", "canned foods"]}
 
 dict_of_next = {"A1" : "Go to A2", "A2" : "Go to A3", "A3" : "Go to A4", "A4" : "Go to A5", "A5" : "Go to A1"}
 
@@ -31,7 +31,7 @@ def name_of_member():
     member_id = alo.rfid_read() 
     if member_id:
         if member_id in dict_of_mem.keys():
-            return ("Hello " + dict_of_mem[member_id])
+            return dict_of_mem[member_id]
     else:
         return "Not a member"
 
@@ -39,7 +39,7 @@ def place_A():
     location = alo.bluetooth()
     if location in dict_of_location.keys():
         return dict_of_location[location]
-
+    
 def where_A():
     where = place_A()
     if where in dict_of_near.keys():
@@ -48,43 +48,41 @@ def where_A():
     if item in dict_of_shopping_list["shopping list"]:
         dict_of_shopping_list["shopping list"].remove(item)
         return area, item 
+    return area, None
+
 def next_A():
     current = place_A()
     if current in dict_of_next.keys():
         next = dict_of_next[current]
         return next
 
-
-# Screen will print first "You are near A1, the Milk section" -> "Go to A2" ->
-# "You are near A2, the Eggs section" -> "Go to A3" -> "You are near A3, the Chips section" -> "Go to A4" ->
-# "You are near A3, the Bananas section"
-
-####main
-
-alo.display_setup()  #run once
-alo.update_display()
-time.sleep(3)
+new = "Welcome "
 member = name_of_member()
 print(member)
-alo.update_mem_text(member)  #run once
+alo.update_near_text(new + member)
+alo.display_setup()
+alo.update_display()
+time.sleep(1)
+alo.update_mem_text("Hello " + member)
 while True:
-    alo.update_iffound_text("")
     new_loc , item = where_A()
+    print(new_loc, item)
     next_area = next_A()
     print(next_area)
-    alo.update_near_text(new_loc)
-    alo.update_goto_text(next_area)
-    alo.update_display()
+    if item != None and member == dict_of_shopping_list["name"]:
+        alo.update_near_text(new_loc)
+        alo.update_goto_text("You are near the " + item)
+        alo.update_display()
+        time.sleep(3)
+        continue
     if len(dict_of_shopping_list["shopping list"]) == 0:
-        alo.update_near_text("Thank you for shopping with us")
+        alo.update_near_text("Thank you for shopping with AL!")
         alo.update_goto_text("")
         alo.update_display()
         break
-    if item != None and member[6:] == dict_of_shopping_list["name"]:
-        alo.update_goto_text("You are near the " + item)
-        alo.update_near_text("")
+    if item == None:
+        alo.update_near_text(new_loc)
+        alo.update_goto_text(next_area)
         alo.update_display()
-        time.sleep(5)
         continue
 GPIO.cleanup()
-
