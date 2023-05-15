@@ -17,9 +17,8 @@ class AisleLocator:
         self.height = None
         self.width = None
         self.mem_text = ""
-        self.near_text = "Welcome to SuperMarket"
-        self.goto_text = "If member -> Hold card near reader"
-        self.iffound_text = "If not member -> Wait 5 seconds"
+        self.near_text = ""
+        self.goto_text = ""
 
     def display_setup(self):
         # Setup SPI bus using hardware SPI:
@@ -114,13 +113,6 @@ class AisleLocator:
             go,
             font=font,
             fill=(0, 0, 0),
-          )
-        found = self.iffound_text
-        draw.text(
-            (self.width // 2 - font_width // 2, (self.height + (6 * font_height)) // 2 - font_height // 2),
-            found,
-            font=font,
-            fill=(0, 0, 0),
         )
         # Display image.
         self.disp.image(image)
@@ -132,6 +124,3 @@ class AisleLocator:
 
     def update_goto_text(self, new_goto_text):
         self.goto_text = new_goto_text 
-
-    def update_iffound_text(self, new_iffound_text):
-        self.iffound_text = new_iffound_text
